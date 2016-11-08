@@ -17,7 +17,6 @@ This is a keras implementation of VIS+LSTM and 2-VIS+LSTM models for the task of
 
 * The model can be specified using the option `-model`. For example, to train the VIS+LSTM model enter `python train.py -model=1`. Similarly, the 2-VIS+LSTM model can be trained using `python train.py -model=2`. If no model is specified, model 1 is selected.
 
-* The batch size and the number of epochs can also be specified using options `-num_epochs` and `-batch_size`. The default batch size and number of epochs are 200 and 25 respectively.
+* The batch size and the number of epochs can also be specified using the options `-num_epochs` and `-batch_size`. The default batch size and number of epochs are 200 and 25 respectively.
 
 ## Prediction
-
