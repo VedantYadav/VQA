@@ -20,3 +20,5 @@ This is a keras implementation of VIS+LSTM and 2-VIS+LSTM models for the task of
 * The batch size and the number of epochs can also be specified using the options `-num_epochs` and `-batch_size`. The default batch size and number of epochs are 200 and 25 respectively.
 
 ## Prediction
+
+* Prediction can be performed on any image using the script `question_answer.py`. The options `-image` and `-question` are used to specify the address of the image and the question respectively. 
