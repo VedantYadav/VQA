@@ -1,21 +1,23 @@
 import numpy as np
 import embedding as ebd
 import prepare_data
+import models
 import argparse
 import keras.backend as K
 from nltk import word_tokenize
-from keras.applications.vgg19 import VGG19, preprocess_input
+from keras.applications.vgg16 import preprocess_input
 from keras.preprocessing import image
 from keras.models import load_model
 
 def extract_image_features(img_path):
-	model = VGG19('imagenet')
+	model = models.VGG_16('weights/vgg16_weights.h5')
 	img = image.load_img(img_path,target_size=(224,224))
 	x = image.img_to_array(img)
 	x = np.expand_dims(x,axis=0)
 	x = preprocess_input(x)
-	last_layer_output = K.function([model.layers[0].input],[model.layers[-1].input])
-	features = last_layer_output([x])[0]
+	last_layer_output = K.function([model.layers[0].input,K.learning_phase()],
+		[model.layers[-1].input])
+	features = last_layer_output([x,0])[0]
 	return features
 
 def preprocess_question(question):
