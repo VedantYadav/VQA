@@ -20,7 +20,6 @@ This is a keras implementation of VIS+LSTM and 2-VIS+LSTM models for the task of
 * The batch size and the number of epochs can also be specified using the options `-num_epochs` and `-batch_size`. The default batch size and number of epochs are 200 and 25 respectively.
 
 * Performance of both models on the validation set is as follows:
-
 | Model      | Epochs | Batch Size | Validation Accuracy |
 |------------|--------|------------|---------------------|
 | VIS+LSTM   | 10     | 200        | 54%                 |
@@ -30,4 +29,13 @@ This is a keras implementation of VIS+LSTM and 2-VIS+LSTM models for the task of
 
 * Prediction can be performed on any image using the script `question_answer.py`. The options `-image` and `-question` are used to specify the address of the image and the question respectively. 
 
+Here are some examples of predictions using the 2-VIS+LSTM model.
+
+| Image                                              | Question                   | Top Answers (left to right) |
+|----------------------------------------------------|----------------------------|-----------------------------|
+| <img src="examples/COCO_val2014_000000000136.jpg"> | Which animal is this?      | giraffe, cat, bear          |
+| <img src="examples/COCO_val2014_000000000074.jpg"> | Which vehicle is this?     | motorcycle, taxi, train     |
+| <img src="examples/COCO_val2014_000000000196.jpg"> | How many dishes are there? | 5, 3, 2                     |
+| <img src="examples/COCO_val2014_000000000283.jpg"> | What is in the bottle?     | water, beer, wine           |
+| <img src="examples/COCO_val2014_000000000357.jpg"> | Which sport is this?       | tennis, baseball, frisbee   |
 
