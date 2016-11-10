@@ -6,8 +6,8 @@ Here is a summary of performance we obtained on both the models.
 
 | Model      | Epochs | Batch Size | Validation Accuracy |
 |------------|--------|------------|---------------------|
-| VIS+LSTM   | 10     | 200        | 54.01%              |
-| 2-VIS+LSTM | 10     | 200        | 53.27%              |
+| VIS+LSTM   | 10     | 200        | 53.27%              |
+| 2-VIS+LSTM | 10     | 200        | 54.01%              |
 
 ## Requirements
 
