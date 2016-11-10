@@ -36,7 +36,7 @@ def create(glove_path):
 		embedding_matrix[i+1] = embeddings[word]
 
 	with h5py.File(embedding_matrix_path, 'w') as hf:
-		hf.create_dataset('embeddings/embedding_matrix',data=embedding_matrix)
+		hf.create_dataset('embedding_matrix',data=embedding_matrix)
 
 	with open(word_idx_path,'w') as f:
 		pickle.dump(word_idx,f)
