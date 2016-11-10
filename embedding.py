@@ -41,3 +41,11 @@ def create(glove_path):
 	with open(word_idx_path,'w') as f:
 		pickle.dump(word_idx,f)
 
+def main():
+	parser = argparse.ArgumentParser()
+	parser.add_argument('-address', type=str, required=True)
+	args = parser.parse_args()
+	print('Preparing embeddings ...')
+	create(args.address)
+
+if __name__ == '__main__': main()
