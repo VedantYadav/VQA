@@ -2,6 +2,13 @@
 
 This is a keras implementation of VIS+LSTM and 2-VIS+LSTM models for the task of Visual Question Answering. These models are explained in the paper [Exploring Models and Data for Image Question Answering](https://arxiv.org/abs/1505.02074). Details about the dataset are explained at the [VisualQA website](http://www.visualqa.org/). 
 
+Here is a summary of performance we obtained on both the models.
+
+| Model      | Epochs | Batch Size | Validation Accuracy |
+|------------|--------|------------|---------------------|
+| VIS+LSTM   | 10     | 200        | 54.01%              |
+| 2-VIS+LSTM | 10     | 200        | 53.27%              |
+
 ## Requirements
 
 * Python 2.7
@@ -18,13 +25,6 @@ This is a keras implementation of VIS+LSTM and 2-VIS+LSTM models for the task of
 * The model can be specified using the option `-model`. For example, to train the VIS+LSTM model enter `python train.py -model=1`. Similarly, the 2-VIS+LSTM model can be trained using `python train.py -model=2`. If no model is specified, model 1 is selected.
 
 * The batch size and the number of epochs can also be specified using the options `-num_epochs` and `-batch_size`. The default batch size and number of epochs are 200 and 25 respectively.
-
-* Performance of both models on the validation set is as follows:
-
-| Model      | Epochs | Batch Size | Validation Accuracy |
-|------------|--------|------------|---------------------|
-| VIS+LSTM   | 10     | 200        | 54%                 |
-| 2-VIS+LSTM | 10     | 200        | 53%                 |
 
 ## Prediction
 
