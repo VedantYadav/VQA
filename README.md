@@ -6,8 +6,8 @@ This is a keras implementation of VIS+LSTM and 2-VIS+LSTM models for the task of
 
 * Python 2.7
 * Numpy
-* Scipy(for loading pre-computed MS COCO features)
-* NLTK(for tokenizer)
+* Scipy (for loading pre-computed MS COCO features)
+* NLTK (for tokenizer)
 * Keras
 * Theano
 
@@ -19,6 +19,15 @@ This is a keras implementation of VIS+LSTM and 2-VIS+LSTM models for the task of
 
 * The batch size and the number of epochs can also be specified using the options `-num_epochs` and `-batch_size`. The default batch size and number of epochs are 200 and 25 respectively.
 
+* Performance of both models on the validation set is as follows:
+
+| Model      | Epochs | Batch Size | Validation Accuracy |
+|------------|--------|------------|---------------------|
+| VIS+LSTM   | 10     | 200        | 54%                 |
+| 2-VIS+LSTM | 10     | 200        | 53%                 |
+
 ## Prediction
 
 * Prediction can be performed on any image using the script `question_answer.py`. The options `-image` and `-question` are used to specify the address of the image and the question respectively. 
+
+
