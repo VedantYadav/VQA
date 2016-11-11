@@ -1,6 +1,9 @@
 # Visual Question Answering
 
-This is a keras implementation of VIS+LSTM and 2-VIS+LSTM models for the task of Visual Question Answering. These models are explained in the paper [Exploring Models and Data for Image Question Answering](https://arxiv.org/abs/1505.02074). Details about the dataset are explained at the [VisualQA website](http://www.visualqa.org/). 
+This is a python and keras implementation of the VIS+LSTM visual question answering model. This model is explained in the paper [Exploring Models and Data for Image Question Answering](https://arxiv.org/abs/1505.02074). We also implement a second model which is similar to 2-VIS+BLSTM model from the paper mentioned above except that the LSTMs are not bidirectional. 
+This model has two image feature inputs, at the start and the end of the sentence, with different learned linear transformations. We call it 2-VIS+LSTM. 
+
+Details about the dataset are explained at the [VisualQA website](http://www.visualqa.org/). 
 
 Here is a summary of performance we obtained on both the models.
 
@@ -22,13 +25,17 @@ Here is a summary of performance we obtained on both the models.
 
 * The basic usage is `python train.py`. 
 
-* The model can be specified using the option `-model`. For example, to train the VIS+LSTM model enter `python train.py -model=1`. Similarly, the 2-VIS+LSTM model can be trained using `python train.py -model=2`. If no model is specified, model 1 is selected.
+* The model to train can be specified using the option `-model`. For example, to train the VIS+LSTM model enter `python train.py -model=1`. Similarly, the 2-VIS+LSTM model can be trained using `python train.py -model=2`. If no model is specified, model 1 is selected.
 
 * The batch size and the number of epochs can also be specified using the options `-num_epochs` and `-batch_size`. The default batch size and number of epochs are 200 and 25 respectively.
 
 ## Prediction
 
-* Prediction can be performed on any image using the script `question_answer.py`. The options `-image` and `-question` are used to specify the address of the image and the question respectively. 
+* Q&A can be performed on any image using the script `question_answer.py`. The pretrained VGG-16 weights have to be downloaded for this. 
+
+* The options `-question` and `-image` are used to specify the question and address of the image respectively. The model can be specified using `-model`. By default, model 2 is selected.
+
+* An example of usage is: `python question_answer.py -image="examples/COCO_val2014_000000000136.jpg" -question="Which animal is this?" -model=2`
 
 Here are some examples of predictions using the 2-VIS+LSTM model.
 
