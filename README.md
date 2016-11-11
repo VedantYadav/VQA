@@ -1,6 +1,6 @@
 # Visual Question Answering
 
-This is a python and keras implementation of the VIS+LSTM visual question answering model. This model is explained in the paper [Exploring Models and Data for Image Question Answering](https://arxiv.org/abs/1505.02074). We also implement a second model which is similar to 2-VIS+BLSTM model from the paper mentioned above except that the LSTMs are not bidirectional. 
+This is a python and keras implementation of the VIS+LSTM visual question answering model. This model is explained in the paper [Exploring Models and Data for Image Question Answering](https://arxiv.org/abs/1505.02074). A second model is also implemented which is similar to the 2-VIS+BLSTM model from the paper mentioned above except that the LSTMs are not bidirectional. 
 This model has two image feature inputs, at the start and the end of the sentence, with different learned linear transformations. We call it 2-VIS+LSTM. 
 
 Details about the dataset are explained at the [VisualQA website](http://www.visualqa.org/). 
