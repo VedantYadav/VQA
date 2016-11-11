@@ -10,13 +10,13 @@ def vis_lstm():
 		embedding_matrix.shape[0],
 		embedding_matrix.shape[1],
 		weights = [embedding_matrix],
-		trainable = False ))
+		trainable = False))
 	
 	image_model = Sequential()
 	image_model.add(Dense(
 		embedding_matrix.shape[1],
 		input_dim=4096,
-		activation='linear' ))
+		activation='linear'))
 	image_model.add(Reshape((1,embedding_matrix.shape[1])))
 	
 	main_model = Sequential()
@@ -37,20 +37,20 @@ def vis_lstm_2():
 		embedding_matrix.shape[0],
 		embedding_matrix.shape[1],
 		weights = [embedding_matrix],
-		trainable = False ))
+		trainable = False))
 	
 	image_model_1 = Sequential()
 	image_model_1.add(Dense(
 		embedding_matrix.shape[1],
 		input_dim=4096,
-		activation='linear' ))
+		activation='linear'))
 	image_model_1.add(Reshape((1,embedding_matrix.shape[1])))
 	
 	image_model_2 = Sequential()
 	image_model_2.add(Dense(
 		embedding_matrix.shape[1],
 		input_dim=4096,
-		activation='linear' ))
+		activation='linear'))
 	image_model_2.add(Reshape((1,embedding_matrix.shape[1])))
 	
 	main_model = Sequential()
