@@ -43,7 +43,7 @@ def generate_answer(img_path, question, model):
 	answers = np.argsort(probabilities[:1000])
 	top_answers = [prepare_data.top_answers[answers[-1]],
 		prepare_data.top_answers[answers[-2]],
-		prepare_data.top_answers[answers[-3]] ]
+		prepare_data.top_answers[answers[-3]]]
 	
 	return top_answers
 
