@@ -29,11 +29,23 @@ Here is a summary of performance we obtained on both the models.
 
 * The batch size and the number of epochs can also be specified using the options `-num_epochs` and `-batch_size`. The default batch size and number of epochs are 200 and 25 respectively.
 
+* For example, to train 2-VIS+LSTM with a batch size of 100 for 10 epochs, we would use: `python train.py -model=2 -batch_size=100 -num_epochs=10`.
+
+## Models
+
+### VIS+LSTM
+
+<img src="examples/model1.png">
+
+### 2-VIS+LSTM
+
+<img src="examples/model2.png">
+
 ## Prediction
 
-* Q&A can be performed on any image using the script `question_answer.py`. The pretrained VGG-16 weights have to be downloaded for this. 
+* Q&A can be performed on any image using the script `question_answer.py`.
 
-* The options `-question` and `-image` are used to specify the question and address of the image respectively. The model can be specified using `-model`. By default, model 2 is selected.
+* The options `-question` and `-image` are used to specify the question and address of the image respectively. The model to use for the prediction can be specified using `-model`. By default, model 2 is selected.
 
 * An example of usage is: `python question_answer.py -image="examples/COCO_val2014_000000000136.jpg" -question="Which animal is this?" -model=2`
 
