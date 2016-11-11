@@ -3,6 +3,7 @@ import embedding as ebd
 import prepare_data
 import models
 import argparse
+import sys
 import keras.backend as K
 from nltk import word_tokenize
 from keras.applications.vgg16 import preprocess_input
@@ -34,7 +35,13 @@ def generate_answer(img_path, question, model):
 	model = load_model(model_path)
 	img_features = extract_image_features(img_path)
 	seq = preprocess_question(question)
-	probabilities = model.predict([img_features,seq,img_features])[0]
+	
+	if model == 1:
+		x = [img_features, seq]
+	else:
+		x = [img_features, seq, img_features]
+
+	probabilities = model.predict(x)[0]
 	answers = np.argsort(probabilities[:1000])
 	top_answers = [prepare_data.top_answers[answers[-1]],
 		prepare_data.top_answers[answers[-2]],
@@ -48,6 +55,10 @@ def main():
 	parser.add_argument('-question', type=str, required=True)
 	parser.add_argument('-model', type=int, default=2)
 	args = parser.parse_args()
+	
+	if args.model != 1 and args.model != 2:
+		print('Invalid model selection.')
+		sys.exit()
 	
 	top_answers = generate_answer(args.image, args.question, args.model)
 	print('Top answers: %s, %s, %s.' % (top_answers[0],top_answers[1],top_answers[2]))
