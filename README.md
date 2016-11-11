@@ -29,7 +29,7 @@ Here is a summary of performance we obtained on both the models.
 
 * The batch size and the number of epochs can also be specified using the options `-num_epochs` and `-batch_size`. The default batch size and number of epochs are 200 and 25 respectively.
 
-* For example, to train 2-VIS+LSTM with a batch size of 100 for 10 epochs, we would use: `python train.py -model=2 -batch_size=100 -num_epochs=10`.
+* To train 2-VIS+LSTM with a batch size of 100 for 10 epochs, we would use: `python train.py -model=2 -batch_size=100 -num_epochs=10`.
 
 ## Models
 
