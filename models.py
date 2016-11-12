@@ -57,7 +57,7 @@ def vis_lstm_2():
 	main_model.add(Merge(
 		[image_model_1,embedding_model,image_model_2],
 		mode = 'concat',
-		concat_axis = 1 ))
+		concat_axis = 1))
 	main_model.add(LSTM(1001))
 	main_model.add(Dropout(0.5))
 	main_model.add(Dense(1001,activation='softmax'))
