@@ -3,7 +3,6 @@ import prepare_data
 import models
 import argparse
 import sys
-from keras.callbacks import ModelCheckpoint
 
 def main():
 	parser = argparse.ArgumentParser()
